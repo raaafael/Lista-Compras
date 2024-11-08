@@ -1,14 +1,25 @@
 function AddItem() {
-    var NameItem = document.getElementById("inputNameItem").value
-    const lista = document.getElementById("list")
-    var Itens = document.createElement("li")
-    
-    var delButton = document.createElement("button")
-    delButton.textContent = "🗑"
-    delButton.addEventListener("click", () => {lista.removeChild(Itens)})
-    
-    Itens.innerHTML = NameItem
-    Itens.appendChild(delButton)
-    lista.appendChild(Itens)
-    document.getElementById("inputNameItem").value = ''
+    const input = document.getElementById('inputNameItem');
+    const itemName = input.value.trim();
+    if (!itemName) {
+        alert('Por favor, digite um item!');
+        return;
+    }
+
+    const list = document.getElementById('list');
+    const listItem = document.createElement('li');
+    listItem.textContent = itemName;
+
+    const removeEmoji = document.createElement('span');
+    removeEmoji.textContent = '🗑️'; 
+    removeEmoji.style.cursor = 'pointer'; 
+    removeEmoji.onclick = function() {
+        list.removeChild(listItem);
+        saveList();
+    };
+
+    listItem.appendChild(removeEmoji);
+    list.appendChild(listItem);
+    input.value = '';
+    saveList();
 }
