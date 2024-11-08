@@ -4,20 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>Lista de compras</title>
 </head>
 <body>
-    <div class="ballon">
+    <div class="ballao">
         <header>
-            <h1>Lista rápida</h1>
+            <h1>Lista de compras</h1>
         </header>
-            <label>
-                <input type="text" id="inputNameItem" placeholder="Digite um novo item" required>
-                <button id="buttonAdicionar" onclick="AddItem()">Adicionar</button>
-            </label>
-        <ul id="list">
-        </ul>
+        <label>
+            <input type="text" id="inputNameItem" placeholder="Digite o seu produto" required>
+            <button id="buttonAdicionar" onclick="AddItem()">Adicionar</button>
+        </label>
+        <ul id="list"></ul>
     </div>
 </body>
 </html>
